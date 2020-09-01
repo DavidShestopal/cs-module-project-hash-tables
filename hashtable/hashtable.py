@@ -99,6 +99,8 @@ class HashTable:
         # index = self.hash_index(key)
         # self.bucket[index] = value
 
+        # Day 2
+
         index = self.hash_index(key)
 
         current = self.storage[index]
@@ -132,6 +134,8 @@ class HashTable:
         # Day 1
         # index = self.hash_index(key)
         # self.bucket[index] = None
+
+        #  Day 2
 
         index = self.hash_index(key)
 
@@ -171,6 +175,8 @@ class HashTable:
         # index = self.hash_index(key)
         # return self.bucket[index]
 
+        #  Day 2
+
         index = self.hash_index(key)
 
         current = self.storage[index]
@@ -188,6 +194,9 @@ class HashTable:
         Implement this.
         """
         # Your code here
+
+        #  Day 2
+
         old_storage = self.storage
         self.capacity = new_capacity
         self.storage = [None] * new_capacity
