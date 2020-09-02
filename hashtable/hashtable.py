@@ -100,15 +100,21 @@ class HashTable:
         # self.bucket[index] = value
 
         # Day 2
-
+        # get the key index value by hashing the key with hash_index
         index = self.hash_index(key)
 
+        # assign a current node to the node at the hash key position
         current = self.storage[index]
+
+        # check if the value at the hashed key/index in bucket is None if it is place the node at this position
+
         if current == None:
             self.storage[index] = HashTableEntry(key, value)
             if not changing_size:
                 self.keys_count += 1
         else:
+
+            # else enter while loop to find the next none position then place the node there.
             while current is not None:
                 if current.key == key:
                     current.value = value
