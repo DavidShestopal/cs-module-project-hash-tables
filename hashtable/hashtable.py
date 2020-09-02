@@ -108,7 +108,7 @@ class HashTable:
 
         # check if the value at the hashed key/index in bucket is None if it is place the node at this position
 
-        if current == None:
+        if current is None:
             self.storage[index] = HashTableEntry(key, value)
             if not changing_size:
                 self.keys_count += 1
@@ -119,7 +119,7 @@ class HashTable:
                 if current.key == key:
                     current.value = value
                     break
-                if current.next == None:
+                if current.next is None:
                     current.next = HashTableEntry(key, value)
                     if not changing_size:
                         self.keys_count += 1
@@ -214,7 +214,7 @@ class HashTable:
 
 
 if __name__ == "__main__":
-    ht = HashTable(8)
+    ht = HashTable(4)
 
     ht.put("line_1", "'Twas brillig, and the slithy toves")
     ht.put("line_2", "Did gyre and gimble in the wabe:")
@@ -236,14 +236,14 @@ if __name__ == "__main__":
         print(ht.get(f"line_{i}"))
 
     # Test resizing
-    old_capacity = ht.get_num_slots()
-    ht.resize(ht.capacity * 2)
+    # old_capacity = ht.get_num_slots()
+    # ht.resize(ht.capacity * 2)
     new_capacity = ht.get_num_slots()
 
-    print(f"\nResized from {old_capacity} to {new_capacity}.\n")
+    print(f"\nResized from 4 to {new_capacity}.\n")
 
     # Test if data intact after resizing
-    for i in range(1, 13):
-        print(ht.get(f"line_{i}"))
+    # for i in range(1, 13):
+    #    print(ht.get(f"line_{i}"))
 
     print("")
