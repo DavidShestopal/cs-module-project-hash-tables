@@ -49,6 +49,6 @@ def reverse(s):
     return string
 
 
-s = 'david'
+s = 'hi i david'
 
 print(reverse(s))

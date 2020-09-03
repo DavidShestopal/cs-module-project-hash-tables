@@ -1,6 +1,6 @@
 def word_count(s):
     # Your code here
-    cache = {}
+    wordcount = {}
     for word in s.split():
         word = word.lower()
 
@@ -9,13 +9,13 @@ def word_count(s):
             if character in punctuation:
                 word = word.replace(character, "")
 
-        if word in cache:
-            cache[word] += 1
+        if word in wordcount:
+            wordcount[word] += 1
         elif word != '':
-            cache.update({word: 1})
+            wordcount.update({word: 1})
 
-    print(f'Output: {cache}')
-    return cache
+    print(f'Output: {wordcount}')
+    return wordcount
 
 
 if __name__ == "__main__":

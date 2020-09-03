@@ -9,8 +9,12 @@ def expensive_seq(x, y, z):
     elif (x, y, z) in cache:
         result = cache.get((x, y, z))
     else:
-        result = expensive_seq(
-            x-1, y+1, z) + expensive_seq(x-2, y+2, z*2) + expensive_seq(x-3, y+3, z*3)
+
+        first = expensive_seq(x-1, y+1, z)
+        second = expensive_seq(x-2, y+2, z*2)
+        third = expensive_seq(x-3, y+3, z*3)
+
+        result = first + second + third
         cache.update({(x, y, z): result})
     return result
 
